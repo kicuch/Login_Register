@@ -1,24 +1,20 @@
 #include "CFileManager.hpp"
 #include <iostream>
 
-FileManager::FileManager()
+const char* CFileManager::PWD_COMMAND = "PWD"; 
+const std::string CFileManager::DATA_FILE_NAME = "/data.txt";
+
+CFileManager::CFileManager()
     : mFile()
-    , mPathToFile( getenv("PWD") )
+    , mPathToFile( getenv( PWD_COMMAND ) )
 {
     std::cout << "Constructor CFileManager" << std::endl;
-    std::string test(mPathToFile + "/data.txt");
-    std::cout << test << std::endl;
+    std::string test( mPathToFile + DATA_FILE_NAME );
     mFile = std::ofstream{ test };
 }
-FileManager::~FileManager()
-{
 
-}
-void FileManager::OpenFile()
+CFileManager::~CFileManager()
 {
-    std::cout << "Open file" << std::endl;
-}
-void FileManager::CloseFile()
-{
-    std::cout << "Close file" << std::endl;
+    std::cout << "Destructor CFileManager" << std::endl;
+    mFile.close();
 }

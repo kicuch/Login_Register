@@ -5,7 +5,12 @@ using namespace std;
 
 int main()
 {   
-    FileManager *fileManager = new FileManager();
-    fileManager->OpenFile();
-    fileManager->CloseFile();
+    CFileManager *fileManager = new CFileManager();
 }
+
+//DODAĆ SKRYPT DO BUDOWANIA .sh
+// make clean
+// make
+// cd bin/
+// ./login
+// cos takiego
