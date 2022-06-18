@@ -1,13 +1,15 @@
 #include <string>
+#include <fstream>
 
 class FileManager
 {
     public:
-        FileManager(std::string pathToFile);
+        FileManager();
         ~FileManager();
         void OpenFile();
         void CloseFile();
 
     private:
-        std::string mFile;
+        std::ofstream mFile;
+        std::string mPathToFile;
 };
