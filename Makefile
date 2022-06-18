@@ -3,7 +3,7 @@ IMPL_DIR := src
 HEADER_DIR := include
 BIN_DIR := bin
 #flags
-CCFLAGS := -std=c++0x -Wall
+CCFLAGS := -Wall -Wextra -pedantic -std=c++17
 IINCLUDE := -I$(HEADER_DIR)
 
 #output
@@ -13,6 +13,9 @@ output: main.o CFileManager.o
 #main
 main.o: main.cpp | $(BIN_DIR)
 	g++ $(IINCLUDE) -c main.cpp
+
+#Logger
+#CLogger.o: $(HEADER_DIR)/CLogger.hpp
 
 #fileManager
 CFileManager.o: $(HEADER_DIR)/CFileManager.hpp $(IMPL_DIR)/CFileManager.cpp

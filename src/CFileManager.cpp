@@ -9,8 +9,7 @@ CFileManager::CFileManager()
     , mPathToFile( getenv( PWD_COMMAND ) )
 {
     std::cout << "Constructor CFileManager" << std::endl;
-    std::string test( mPathToFile + DATA_FILE_NAME );
-    mFile = std::ofstream{ test };
+    mFile = std::ofstream{ mPathToFile + DATA_FILE_NAME };
 }
 
 CFileManager::~CFileManager()
