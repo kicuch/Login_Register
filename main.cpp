@@ -9,7 +9,9 @@ int main()
 {   
     auto fileManager = make_shared<CFileManager>();
 
-    //dodac definy
+    logInfo("test");
+
+    //dodac do logów czas i z jakiej klasy i metody i linijka
 
     //wyswietlanie menu z loginem:
     // login:
