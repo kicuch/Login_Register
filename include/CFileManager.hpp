@@ -6,15 +6,15 @@
 
 class CFileManager
 {
-    public:
-        CFileManager();
-        ~CFileManager();
+public:
+    CFileManager();
+    ~CFileManager();
 
-    private:
-        std::ofstream mFile;
-        std::string mPathToFile;
+private:
+    std::ofstream mFile;
+    std::string mPathToFile;
 
-        static const char* PWD_COMMAND;
-        static const std::string DATA_FILE_NAME;
+    static const char *PWD_COMMAND;
+    static const std::string DATA_FILE_NAME;
 };
-#endif //CFILEMANAGER_HPP
+#endif // CFILEMANAGER_HPP

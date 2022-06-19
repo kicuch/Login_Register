@@ -8,8 +8,8 @@ CCFLAGS := -Wall -Wextra -pedantic -std=c++17
 IINCLUDE := -I$(HEADER_DIR)
 
 #output
-output: main.o CFileManager.o
-	g++ $(CCFLAGS) $(IINCLUDE) main.o CFileManager.o -o $(BIN_DIR)/login
+output: main.o CFileManager.o CMenu.o
+	g++ $(CCFLAGS) $(IINCLUDE) main.o CFileManager.o CMenu.o -o $(BIN_DIR)/login
 
 #main
 main.o: main.cpp | $(BIN_DIR)
@@ -18,6 +18,10 @@ main.o: main.cpp | $(BIN_DIR)
 #fileManager
 CFileManager.o: $(HEADER_DIR)/CFileManager.hpp $(IMPL_DIR)/CFileManager.cpp
 	g++ $(IINCLUDE) -c $(IMPL_DIR)/CFileManager.cpp 
+
+#CMenu
+CMenu.o: $(HEADER_DIR)/CMenu.hpp $(IMPL_DIR)/CMenu.cpp
+	g++ $(IINCLUDE) -c $(IMPL_DIR)/CMenu.cpp 
 
 #create bin folder
 $(BIN_DIR):
