@@ -37,7 +37,7 @@ void CMenu::mainMenu()
         }
         else
         {
-            cout << "Wprowadz poprawna opcje!" << endl;
+            cout << "Please, correct your choice!" << endl;
             system("clear");
         }
     } while (result != 1 || result != 2 || result != 3);
@@ -56,9 +56,18 @@ void CMenu::loginMenu()
                             {
                                 return ( login == elem.first && password == elem.second );
                             });
-    system("clear");
-    cout << "You are logged in! Welcome!" << endl;
-    loggedMenu();
+    if( it != mLoginPasswordMap.cend() )
+    {
+        system("clear");
+        cout << "You are logged in! Welcome!" << endl;
+        loggedMenu();
+    }
+    else
+    {
+        system( "clear" );
+        cout << "Incorrect login or password" << endl;
+        loginMenu();
+    }
 }
 
 void CMenu::loggedMenu()
